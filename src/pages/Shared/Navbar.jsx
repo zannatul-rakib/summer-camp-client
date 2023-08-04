@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 const navigation = [
     { name: 'Home', href: '#', current: true },
-    { name: 'Instructors', href: '#', current: false },
+    { name: 'Instructors', href: '/instructors', current: false },
     { name: 'Classes', href: '#', current: false },
     { name: 'Contact', href: '#', current: false },
     { name: 'Blog', href: '#', current: false },
@@ -43,9 +43,9 @@ const Navbar = () => {
                                 <div className="hidden sm:ml-6 sm:block">
                                     <div className="flex space-x-4">
                                         {navigation.map((item) => (
-                                            <a
+                                            <Link
                                                 key={item.name}
-                                                href={item.href}
+                                                to={item.href}
                                                 className={classNames(
                                                     item.current ? 'bg-[#15d5cc] text-white' : 'hover:bg-[#2C75BA] hover:text-white',
                                                     'rounded-md px-3 py-2 text-sm font-medium'
@@ -53,7 +53,7 @@ const Navbar = () => {
                                                 aria-current={item.current ? 'page' : undefined}
                                             >
                                                 {item.name}
-                                            </a>
+                                            </Link>
                                         ))}
                                     </div>
                                 </div>
