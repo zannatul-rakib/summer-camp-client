@@ -10,7 +10,7 @@ const YogaClass = () => {
     useEffect(() => {
         fetch('yoga.json')
             .then(res => res.json())
-            .then(data => setYogas(data))
+            .then(data => setYogas(data.slice(0, 3)))
 
     }, [])
     return (
