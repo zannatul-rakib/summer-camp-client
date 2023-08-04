@@ -1,0 +1,210 @@
+[
+  {
+    "classTitle": "Hatha Yoga",
+    "classImage": "https://i.ibb.co/xzS1Z90/yogaimage3.jpg",
+    "description": {
+      "overview": "This class is designed for beginners to introduce the fundamental principles of Hatha Yoga.",
+      "learningOutcome": "By the end of this class, students will have a basic understanding of Hatha Yoga poses and breathing techniques."
+    },
+    "price": 20,
+    "time": "Mondays and Wednesdays at 6:00 PM",
+    "duration": "1 hour",
+    "reviews": [
+      {
+        "name": "John Doe",
+        "comment": "Great class for beginners! Highly recommended."
+      },
+      {
+        "name": "Jane Smith",
+        "comment": "I really enjoyed the class. The instructor was knowledgeable and friendly."
+      }
+    ],
+    "category": "Beginner",
+    "instructor": {
+      "name": "Jessica Johnson",
+      "image": "jessica-johnson.jpg"
+    }
+  },
+  {
+    "classTitle": "Vinyasa Flow Yoga",
+    "classImage": "https://i.ibb.co/mHYhVkV/yogaimage4.jpg",
+    "description": {
+      "overview": "Experience a dynamic flow of yoga postures that synchronize with breath.",
+      "learningOutcome": "Students will improve their flexibility, strength, and balance through regular Vinyasa practice."
+    },
+    "price": 25,
+    "time": "Tuesdays and Thursdays at 7:30 AM",
+    "duration": "1 hour and 15 minutes",
+    "reviews": [
+      {
+        "name": "Alice Cooper",
+        "comment": "Amazing class! The flow was challenging but rewarding."
+      },
+      {
+        "name": "Michael Brown",
+        "comment": "Vinyasa Flow is now my favorite style of yoga. The instructor was fantastic!"
+      }
+    ],
+    "category": "Intermediate",
+    "instructor": {
+      "name": "Michael Davis",
+      "image": "michael-davis.jpg"
+    }
+  },
+  {
+    "classTitle": "Yin Yoga and Meditation",
+    "classImage": "https://i.ibb.co/0FyBFvz/yoga-poses-for-kids-feat.jpg",
+    "description": {
+      "overview": "This class focuses on holding poses for an extended period to improve flexibility and relaxation.",
+      "learningOutcome": "Students will learn mindfulness techniques and experience deep relaxation through Yin Yoga and Meditation."
+    },
+    "price": 18,
+    "time": "Fridays at 5:00 PM",
+    "duration": "1 hour and 15 minutes",
+    "reviews": [
+      {
+        "name": "Emma Johnson",
+        "comment": "I loved the Yin Yoga session. It helped me release tension and stress."
+      },
+      {
+        "name": "David Lee",
+        "comment": "The instructor was excellent, guiding us through the practice with a soothing voice."
+      }
+    ],
+    "category": "All Levels",
+    "instructor": {
+      "name": "Emily Roberts",
+      "image": "emily-roberts.jpg"
+    }
+  },
+  {
+    "classTitle": "Power Yoga for Strength",
+    "classImage": "https://i.ibb.co/30M0Vv5/image.jpg",
+    "description": {
+      "overview": "A vigorous and challenging class focusing on building strength and stamina.",
+      "learningOutcome": "Students will develop core strength and increase their overall physical endurance."
+    },
+    "price": 22,
+    "time": "Saturdays at 9:00 AM",
+    "duration": "1 hour and 30 minutes",
+    "reviews": [
+      {
+        "name": "Daniel Brown",
+        "comment": "Power Yoga was intense, but it left me feeling invigorated."
+      },
+      {
+        "name": "Sophia Parker",
+        "comment": "The instructor was motivating and helped us push through the challenging poses."
+      }
+    ],
+    "category": "Intermediate/Advanced",
+    "instructor": {
+      "name": "David Johnson",
+      "image": "david-johnson.jpg"
+    }
+  },
+  {
+    "classTitle": "Gentle Yoga for Relaxation",
+    "classImage": "https://i.ibb.co/wZt1Jx1/Yoga-Classes-for-Kids-2023-CV.jpg",
+    "description": {
+      "overview": "A calming and gentle yoga class perfect for stress relief and relaxation.",
+      "learningOutcome": "Students will leave the class feeling rejuvenated and at ease."
+    },
+    "price": 15,
+    "time": "Sundays at 6:30 PM",
+    "duration": "1 hour",
+    "reviews": [
+      {
+        "name": "Olivia White",
+        "comment": "The Gentle Yoga class was exactly what I needed after a busy week."
+      },
+      {
+        "name": "Ethan Taylor",
+        "comment": "The instructor created a peaceful atmosphere, making the class truly relaxing."
+      }
+    ],
+    "category": "All Levels",
+    "instructor": {
+      "name": "Oliver Johnson",
+      "image": "oliver-johnson.jpg"
+    }
+  },
+  {
+    "classTitle": "Ashtanga Yoga Intensive",
+    "classImage": "https://i.ibb.co/kQwPW7n/Florence-for-Kids-Yoga-Blog.jpg",
+    "description": {
+      "overview": "A challenging class following a specific sequence of postures with focused breathing.",
+      "learningOutcome": "Students will deepen their yoga practice and improve their overall flexibility."
+    },
+    "price": 30,
+    "time": "Mondays and Thursdays at 6:30 AM",
+    "duration": "1 hour and 15 minutes",
+    "reviews": [
+      {
+        "name": "Sophie Lee",
+        "comment": "The Ashtanga Yoga class helped me advance my practice and build strength."
+      },
+      {
+        "name": "Jack Williams",
+        "comment": "The instructor was knowledgeable and provided helpful adjustments during the class."
+      }
+    ],
+    "category": "Advanced",
+    "instructor": {
+      "name": "Eva Johnson",
+      "image": "eva-johnson.jpg"
+    }
+  },
+  {
+    "classTitle": "Yoga for Expectant",
+    "classImage": "https://i.ibb.co/mXGSMp1/pexels-anna-shvets-5012071.jpg",
+    "description": {
+      "overview": "A gentle and safe yoga class designed to support pregnant women through their journey.",
+      "learningOutcome": "Expectant mothers will learn poses and breathing techniques to ease pregnancy discomforts."
+    },
+    "price": 18,
+    "time": "Wednesdays at 10:00 AM",
+    "duration": "1 hour",
+    "reviews": [
+      {
+        "name": "Maria Lopez",
+        "comment": "Prenatal Yoga was a wonderful experience, helping me connect with my body and baby."
+      },
+      {
+        "name": "Linda Carter",
+        "comment": "The instructor was compassionate and understanding of the unique needs of pregnant women."
+      }
+    ],
+    "category": "Prenatal",
+    "instructor": {
+      "name": "Isabella Rodriguez",
+      "image": "isabella-rodriguez.jpg"
+    }
+  },
+  {
+    "classTitle": "Yoga for Stress Relief",
+    "classImage": "https://i.ibb.co/Wc9yTd4/pexels-lena-helfinger-3992601.jpg",
+    "description": {
+      "overview": "Learn relaxation techniques and gentle yoga poses to reduce stress and anxiety.",
+      "learningOutcome": "Students will acquire tools to manage stress and promote emotional well-being."
+    },
+    "price": 20,
+    "time": "Tuesdays and Fridays at 7:00 PM",
+    "duration": "1 hour",
+    "reviews": [
+      {
+        "name": "Alex Turner",
+        "comment": "The Yoga for Stress Relief class was therapeutic, helping me unwind and clear my mind."
+      },
+      {
+        "name": "Kate Morgan",
+        "comment": "The instructor's guidance during meditation was soothing and calming."
+      }
+    ],
+    "category": "All Levels",
+    "instructor": {
+      "name": "Sophia Johnson",
+      "image": "sophia-johnson.jpg"
+    }
+  }
+]
