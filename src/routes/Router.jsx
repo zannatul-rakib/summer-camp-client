@@ -12,6 +12,10 @@ import UserDashboard from "../pages/UserDasboard/UserDashboard";
 import Cart from "../pages/UserDasboard/Cart";
 import DashBoard from "../layouts/DasBoard";
 import Payment from "../pages/Payment/Payment";
+import AdminDashboard from "../pages/AdminDashBoard/AdminDashboard";
+import ManageUser from "../pages/ManageUser/ManageUser";
+import AddClass from "../pages/AddClass/AddClass";
+import ManageClasses from "../pages/ManageClasses/ManageClasses";
 
 
 export const router = createBrowserRouter([
@@ -69,18 +73,23 @@ export const router = createBrowserRouter([
                 path: "cart",
                 element: <Cart />
             },
-            // {
-            //     path: 'admin-home',
-            //     element: <AdminDashboard />
-            // },
-            // {
-            //     path: 'manage-user',
-            //     element: <ManageUser />
-            // },
-            // {
-            //     path: 'add-class',
-            //     element: <AddClass />
-            // },
+            {
+                path: 'admin-home',
+                element: <AdminDashboard />
+            },
+            {
+                path: 'manage-user',
+                element: <ManageUser />
+            },
+            {
+                path: 'add-class',
+                element: <AddClass />
+            },
+            {
+                path: 'manage-classes',
+                element: <ManageClasses />
+            },
+
 
         ]
     }

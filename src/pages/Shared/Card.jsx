@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 
 const Card = ({ yoga }) => {
     const { classTitle, classImage, price, time, duration, category, _id } = yoga;
+    console.log(_id);
     return (
         <div className="max-w-sm bg-white px-6 pt-6 pb-2 rounded-xl shadow-lg transform hover:scale-105 transition duration-500">
             <h3 className="mb-3 text-xl font-bold text-[#15d5cc]">Awesome Yoga</h3>

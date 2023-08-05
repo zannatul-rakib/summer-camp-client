@@ -8,7 +8,7 @@ const YogaClass = () => {
     const [yogas, setYogas] = useState([]);
 
     useEffect(() => {
-        fetch('yoga.json')
+        fetch('http://localhost:5000/classes')
             .then(res => res.json())
             .then(data => setYogas(data.slice(0, 3)))
 

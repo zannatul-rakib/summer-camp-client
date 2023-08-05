@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { FaBarsProgress } from "react-icons/fa6"
 import { Link } from 'react-router-dom';
-// import useAdmin from '../../hooks/useAdmin';
+import useAdmin from '../../hooks/useAdmin';
+
 
 const Sidebar = () => {
     const [isSubMenuVisible, setSubMenuVisible] = useState(false);
@@ -14,8 +15,8 @@ const Sidebar = () => {
     const toggleSidebar = () => {
         setSidebarOpen((prev) => !prev);
     };
-    // const [isAdmin] = useAdmin();
-    const isAdmin = false;
+    const [isAdmin] = useAdmin();
+    // const isAdmin = true;
 
     return (
         <>
@@ -39,7 +40,7 @@ const Sidebar = () => {
                 {
                     isAdmin ?
                         <>
-                            <Link to="/dashboard/user-home">
+                            <Link to="/dashboard/admin-home">
                                 <div
                                     className="p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600 text-white">
                                     <span className="text-[15px] ml-4 text-gray-200 font-bold"> Admin Home</span>
