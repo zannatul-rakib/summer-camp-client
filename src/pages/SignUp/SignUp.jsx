@@ -21,14 +21,14 @@ const SignUp = () => {
         createUser(data.email, data.password)
             .then(result => {
                 const newUser = result.user;
-                console.log(newUser);
+                // console.log(newUser);
                 updateUserProfile(data.name, data.photoURL)
                     .then(() => {
                         const userInfo = { name: data.name, email: data.email }
                         // console.log(userInfo);
-                        axios.post('http://localhost:5000/users', userInfo)
+                        axios.post('https://summercamp-yoga-server.vercel.app/users', userInfo)
                             .then(data => {
-                                console.log(data);
+                                // console.log(data);
                                 if (data.data.acknowledged) {
                                     reset();
 

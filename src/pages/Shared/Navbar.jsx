@@ -5,6 +5,8 @@ import { AiOutlineShoppingCart } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
 import { MyContext } from '../../provider/AuthProvider';
 import useCart from '../../hooks/useCart';
+import useAdmin from '../../hooks/useAdmin';
+import Swal from 'sweetalert2';
 
 const navigation = [
     { name: 'Home', href: '/', id: 1 },
@@ -31,12 +33,23 @@ const Navbar = () => {
         setActiveItem(itemId);
     };
 
+    const { isAdmin } = useAdmin();
+
 
     const { user, logOut } = useContext(MyContext);
 
     const handleSignOut = () => {
         logOut()
-            .then(() => console.log('user logout'))
+            .then(() => {
+                // console.log('user logout')
+                Swal.fire({
+                    position: 'top-end',
+                    icon: 'success',
+                    title: 'user logout successfully',
+                    showConfirmButton: false,
+                    timer: 1500
+                })
+            })
             .catch(error => console.log(error))
     }
     return (
@@ -82,54 +95,57 @@ const Navbar = () => {
                             <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
                                 {user?.displayName ?
                                     <>
-                                        <Menu as="div" className="relative ml-10">
-                                            <div>
-                                                <Menu.Button className="relative">
-                                                    <span className='text-3xl'><AiOutlineShoppingCart /></span>
-                                                    <span className='absolute text-sm rounded-full bg-[#15d5cc] h-5 w-5 text-white -top-2 -right-2'>{cart.length}</span>
-                                                </Menu.Button>
-                                            </div>
-                                            <Transition
-                                                as={Fragment}
-                                                enter="transition ease-out duration-100"
-                                                enterFrom="transform opacity-0 scale-95"
-                                                enterTo="transform opacity-100 scale-100"
-                                                leave="transition ease-in duration-75"
-                                                leaveFrom="transform opacity-100 scale-100"
-                                                leaveTo="transform opacity-0 scale-95"
-                                            >
-                                                <Menu.Items className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
-                                                    <Menu.Item>
+                                        {
+                                            isAdmin ? " " :
+                                                <Menu as="div" className="relative ml-10">
+                                                    <div>
+                                                        <Menu.Button className="relative">
+                                                            <span className='text-3xl'><AiOutlineShoppingCart /></span>
+                                                            <span className='absolute text-sm rounded-full bg-[#15d5cc] h-5 w-5 text-white -top-2 -right-2'>{cart.length}</span>
+                                                        </Menu.Button>
+                                                    </div>
+                                                    <Transition
+                                                        as={Fragment}
+                                                        enter="transition ease-out duration-100"
+                                                        enterFrom="transform opacity-0 scale-95"
+                                                        enterTo="transform opacity-100 scale-100"
+                                                        leave="transition ease-in duration-75"
+                                                        leaveFrom="transform opacity-100 scale-100"
+                                                        leaveTo="transform opacity-0 scale-95"
+                                                    >
+                                                        <Menu.Items className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                                                            <Menu.Item>
 
-                                                        <a
-                                                            href="#"
-                                                            className='bg-gray-100 block px-4 py-2 text-sm text-gray-700 hover:bg-[#15d5cc] hover:text-white'>
-                                                            Quantity: {cart.length}
-                                                        </a>
+                                                                <a
+                                                                    href="#"
+                                                                    className='bg-gray-100 block px-4 py-2 text-sm text-gray-700 hover:bg-[#15d5cc] hover:text-white'>
+                                                                    Quantity: {cart.length}
+                                                                </a>
 
-                                                    </Menu.Item>
-                                                    <Menu.Item>
+                                                            </Menu.Item>
+                                                            <Menu.Item>
 
-                                                        <a
-                                                            href="#"
-                                                            className='bg-gray-100 block px-4 py-2 text-sm text-gray-700 hover:bg-[#15d5cc] hover:text-white'
-                                                        >
-                                                            Total Price: ${total}
-                                                        </a>
-                                                    </Menu.Item>
-                                                    <Menu.Item>
+                                                                <a
+                                                                    href="#"
+                                                                    className='bg-gray-100 block px-4 py-2 text-sm text-gray-700 hover:bg-[#15d5cc] hover:text-white'
+                                                                >
+                                                                    Total Price: ${total}
+                                                                </a>
+                                                            </Menu.Item>
+                                                            <Menu.Item>
 
-                                                        <Link to="/dashboard/cart">
-                                                            <button
-                                                                className='w-full btn bg-[#15d5cc] px-4 py-2 text-md text-white hover:bg-[#2C75BA] '
-                                                            >                                         View Cart
-                                                            </button>
-                                                        </Link>
+                                                                <Link to="/dashboard/cart">
+                                                                    <button
+                                                                        className='w-full btn bg-[#15d5cc] px-4 py-2 text-md text-white hover:bg-[#2C75BA] '
+                                                                    >                                         View Cart
+                                                                    </button>
+                                                                </Link>
 
-                                                    </Menu.Item>
-                                                </Menu.Items>
-                                            </Transition>
-                                        </Menu>
+                                                            </Menu.Item>
+                                                        </Menu.Items>
+                                                    </Transition>
+                                                </Menu>
+                                        }
 
                                         <Menu as="div" className="relative ml-3">
                                             <div>
@@ -174,12 +190,22 @@ const Navbar = () => {
                                                     </Menu.Item>
                                                     <Menu.Item>
 
-                                                        <Link
-                                                            to="/dashboard/user-home"
-                                                            className='bg-gray-100 block px-4 py-2 text-sm text-gray-700 hover:bg-[#15d5cc] hover:text-white'
-                                                        >
-                                                            Dashboard
-                                                        </Link>
+                                                        {
+                                                            isAdmin ?
+                                                                <Link
+                                                                    to="/dashboard/admin-home"
+                                                                    className='bg-gray-100 block px-4 py-2 text-sm text-gray-700 hover:bg-[#15d5cc] hover:text-white'
+                                                                >
+                                                                    Dashboard
+                                                                </Link>
+                                                                :
+                                                                <Link
+                                                                    to="/dashboard/user-home"
+                                                                    className='bg-gray-100 block px-4 py-2 text-sm text-gray-700 hover:bg-[#15d5cc] hover:text-white'
+                                                                >
+                                                                    Dashboard
+                                                                </Link>
+                                                        }
                                                     </Menu.Item>
                                                     <Menu.Item>
 

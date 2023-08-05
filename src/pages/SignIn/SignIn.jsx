@@ -20,17 +20,17 @@ const SignIn = () => {
         const email = form.email.value;
         const password = form.password.value;
 
-        console.log(email, password)
+        // console.log(email, password)
 
         userLogin(email, password)
             .then(result => {
                 const createdUser = result.user;
-                console.log(createdUser);
+                // console.log(createdUser);
                 form.reset();
                 navigate(from, { replace: true });
             })
             .catch(error => {
-                console.log(error);
+                // console.log(error);
                 setError(error.message)
             })
     }

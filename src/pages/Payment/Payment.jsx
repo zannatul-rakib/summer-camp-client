@@ -10,9 +10,9 @@ const stripePromise = loadStripe(import.meta.env.VITE_PAYMENT_GATEWAY_PK)
 
 const Payment = () => {
     const [cart] = useCart();
-    console.log(cart)
+    // console.log(cart)
     const total = cart.reduce((sum, item) => sum + item.price, 0);
-    console.log(total)
+    // console.log(total)
     return (
         <div>
             <SectionTitle title="please process the" subTitle="Payment" />

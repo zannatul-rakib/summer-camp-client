@@ -5,7 +5,7 @@ import Hero from "../../components/Hero";
 const Instructors = () => {
     const [teachers, setTeachers] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/teachers')
+        fetch('https://summercamp-yoga-server.vercel.app/teachers')
             .then(res => res.json())
             .then(data => setTeachers(data))
 

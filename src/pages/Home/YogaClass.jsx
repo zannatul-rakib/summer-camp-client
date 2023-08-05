@@ -8,7 +8,7 @@ const YogaClass = () => {
     const [yogas, setYogas] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/classes')
+        fetch('https://summercamp-yoga-server.vercel.app/classes')
             .then(res => res.json())
             .then(data => setYogas(data.slice(0, 3)))
 

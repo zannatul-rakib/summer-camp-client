@@ -22,7 +22,7 @@ const ManageClasses = () => {
 
                 axiosSecure.delete(`/classes/${id}`)
                     .then(res => {
-                        console.log('deleted res', res);
+                        // console.log('deleted res', res);
                         if (res.data.acknowledged) {
                             refetch();
                             Swal.fire(

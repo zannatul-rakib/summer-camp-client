@@ -9,7 +9,7 @@ const PopularInstructor = () => {
     const [teachers, setTeachers] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/teachers')
+        fetch('https://summercamp-yoga-server.vercel.app/teachers')
             .then(res => res.json())
             .then(data => setTeachers(data.slice(0, 3)))
 

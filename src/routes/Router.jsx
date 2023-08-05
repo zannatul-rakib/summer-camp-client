@@ -35,7 +35,7 @@ export const router = createBrowserRouter([
             {
                 path: "/instructors/:id",
                 element: <PrivateRouter> <InstructorDetails /></PrivateRouter>,
-                loader: ({ params }) => fetch(`http://localhost:5000/teachers/${params.id}`)
+                loader: ({ params }) => fetch(`https://summercamp-yoga-server.vercel.app/teachers/${params.id}`)
             },
             {
                 path: "classes",
@@ -44,7 +44,7 @@ export const router = createBrowserRouter([
             {
                 path: "/classes/:id",
                 element: <PrivateRouter><ClassDetails /></PrivateRouter>,
-                loader: ({ params }) => fetch(`http://localhost:5000/classes/${params.id}`)
+                loader: ({ params }) => fetch(`https://summercamp-yoga-server.vercel.app/classes/${params.id}`)
             },
             {
                 path: "/payment",

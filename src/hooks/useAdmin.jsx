@@ -20,6 +20,7 @@ const useAdmin = () => {
         }
     })
     return [isAdmin, isAdminLoading]
+
 };
 
 export default useAdmin;

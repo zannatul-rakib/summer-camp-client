@@ -20,15 +20,15 @@ const SocialSignUp = () => {
             .then(data => {
                 const createdUser = data.user;
                 const userInfo = { name: createdUser.displayName, email: createdUser.email }
-                axios.post('http://localhost:5000/users', userInfo)
+                axios.post('https://summercamp-yoga-server.vercel.app/users', userInfo)
                     .then(data => {
-                        console.log(data.data)
+                        // console.log(data.data)
                         if (data.data.acknowledged) {
-                            console.log('user created')
+                            // console.log('user created')
                             Swal.fire({
                                 position: 'top-end',
                                 icon: 'success',
-                                title: 'Your work has been saved',
+                                title: 'user created successfully',
                                 showConfirmButton: false,
                                 timer: 1500
                             })
@@ -47,11 +47,11 @@ const SocialSignUp = () => {
                 const createdUser = data.user;
                 // console.log(user)
                 const userInfo = { name: createdUser.displayName, email: createdUser.email }
-                axios.post('http://localhost:5000/users', userInfo)
+                axios.post('https://summercamp-yoga-server.vercel.app/users', userInfo)
                     .then(data => {
-                        console.log(data.data)
+                        // console.log(data.data)
                         if (data.data.acknowledged) {
-                            console.log('user created')
+                            // console.log('user created')
                         }
                     })
                 navigate(from, { replace: true })

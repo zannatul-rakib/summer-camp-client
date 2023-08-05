@@ -67,7 +67,7 @@ const CheckOutForm = ({ price, cart }) => {
         if (confirmError) {
             console.log(confirmError);
         }
-        console.log('payment Intend', paymentIntent)
+        // console.log('payment Intend', paymentIntent)
         setProcessing(false);
         if (paymentIntent.status === 'succeeded') {
             setTransactionId(paymentIntent.id)
@@ -85,7 +85,7 @@ const CheckOutForm = ({ price, cart }) => {
             }
             axiosSecure.post('/payments', payment)
                 .then(res => {
-                    console.log(res.data);
+                    // console.log(res.data);
                     if (res.data.insertedId) {
                         Swal.fire({
                             position: 'top-end',
