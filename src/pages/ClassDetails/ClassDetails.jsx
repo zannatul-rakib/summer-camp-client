@@ -1,6 +1,6 @@
-// import { useContext } from "react";
+import { useContext } from "react";
 import { useLoaderData } from "react-router-dom";
-// import { MyContext } from "../../provider/AuthProvider";
+import { MyContext } from "../../provider/AuthProvider";
 import Hero from "../../components/Hero";
 import { BiTimeFive } from "react-icons/bi";
 import { BsFillCalendarWeekFill, BsFillCameraVideoFill } from "react-icons/bs";
@@ -8,34 +8,37 @@ import { GiBarbedCoil } from "react-icons/gi";
 import { AiOutlinePercentage } from "react-icons/ai";
 import userImage from "../../assets/user.jpg"
 import { FaQuoteLeft } from "react-icons/fa";
+import useCart from "../../hooks/useCart";
+import useAxiosSecure from "../../hooks/useAxiosSecure";
+import Swal from "sweetalert2";
 
 
 
 
 const ClassDetails = () => {
     const data = useLoaderData();
-    const { classTitle, classImage, description, price, time, duration, category, instructor, reviews } = data;
-    // const { user } = useContext(MyContext)
-    // const [, refetch] = useCart();
-    // const [axiosSecure] = useAxiosSecure();
+    const { classTitle, classImage, description, price, time, duration, category, instructor, reviews, _id } = data;
+    const { user } = useContext(MyContext)
+    const [, refetch] = useCart();
+    const [axiosSecure] = useAxiosSecure();
 
-    // const handleAddToCart = (id) => {
-    //     const itemCart = { classId: id, email: user.email, classTitle, classImage, price, instructorName: instructor.name, instructorImage: instructor.image, category }
-    //     axiosSecure.post('http://localhost:5000/carts', itemCart)
-    //         .then(data => {
-    //             // console.log()
-    //             if (data.status > 0) {
-    //                 refetch();
-    //                 Swal.fire({
-    //                     position: 'top-end',
-    //                     icon: 'success',
-    //                     title: 'Your class has been added',
-    //                     showConfirmButton: false,
-    //                     timer: 1000
-    //                 })
-    //             }
-    //         })
-    // }
+    const handleAddToCart = (id) => {
+        const itemCart = { classId: id, email: user.email, classTitle, classImage, price, instructorName: instructor.name, instructorImage: instructor.image, category }
+        axiosSecure.post('/carts', itemCart)
+            .then(data => {
+                // console.log()
+                if (data.status > 0) {
+                    refetch();
+                    Swal.fire({
+                        position: 'top-end',
+                        icon: 'success',
+                        title: 'Your class has been added',
+                        showConfirmButton: false,
+                        timer: 1000
+                    })
+                }
+            })
+    }
 
     return (
         <div className="container mx-auto">
@@ -96,8 +99,8 @@ const ClassDetails = () => {
                         </p>
                     </div>
                     <div className="mt-6">
-                        {/* onClick={() => handleAddToCart(_id)} */}
-                        <button className="btn w-full py-4 uppercase bg-[#15d5cc] text-white rounded-md hover:bg-indigo-600">Enroll Now</button>
+
+                        <button onClick={() => handleAddToCart(_id)} className="btn w-full py-4 uppercase bg-[#15d5cc] text-white rounded-md hover:bg-indigo-600">Enroll Now</button>
                     </div>
                     <div>
                         <div className="relative">

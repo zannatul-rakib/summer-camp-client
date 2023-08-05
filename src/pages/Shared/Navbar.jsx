@@ -4,6 +4,7 @@ import { Fragment, useContext, useState } from 'react';
 import { AiOutlineShoppingCart } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
 import { MyContext } from '../../provider/AuthProvider';
+import useCart from '../../hooks/useCart';
 
 const navigation = [
     { name: 'Home', href: '/', id: 1 },
@@ -18,6 +19,10 @@ function classNames(active, inactive) {
 }
 
 const Navbar = () => {
+    const [cart] = useCart();
+
+    const total = cart.reduce((sum, item) => sum + item.price, 0);
+
 
     const [activeItem, setActiveItem] = useState(1);
 
@@ -81,7 +86,7 @@ const Navbar = () => {
                                             <div>
                                                 <Menu.Button className="relative">
                                                     <span className='text-3xl'><AiOutlineShoppingCart /></span>
-                                                    <span className='absolute text-sm rounded-full bg-[#15d5cc] h-5 w-5 text-white -top-2 -right-2'>4</span>
+                                                    <span className='absolute text-sm rounded-full bg-[#15d5cc] h-5 w-5 text-white -top-2 -right-2'>{cart.length}</span>
                                                 </Menu.Button>
                                             </div>
                                             <Transition
@@ -99,7 +104,7 @@ const Navbar = () => {
                                                         <a
                                                             href="#"
                                                             className='bg-gray-100 block px-4 py-2 text-sm text-gray-700 hover:bg-[#15d5cc] hover:text-white'>
-                                                            Quantity: 4
+                                                            Quantity: {cart.length}
                                                         </a>
 
                                                     </Menu.Item>
@@ -109,7 +114,7 @@ const Navbar = () => {
                                                             href="#"
                                                             className='bg-gray-100 block px-4 py-2 text-sm text-gray-700 hover:bg-[#15d5cc] hover:text-white'
                                                         >
-                                                            Total Price: $70
+                                                            Total Price: ${total}
                                                         </a>
                                                     </Menu.Item>
                                                     <Menu.Item>
