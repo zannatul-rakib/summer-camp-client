@@ -1,10 +1,11 @@
 import { BsCurrencyDollar } from "react-icons/bs";
 import { MdDateRange } from "react-icons/md";
 import { BiTimeFive } from "react-icons/bi";
+import { Link } from "react-router-dom";
 
 
 const Card = ({ yoga }) => {
-    const { classTitle, classImage, price, time, duration, category } = yoga;
+    const { classTitle, classImage, price, time, duration, category, _id } = yoga;
     return (
         <div className="max-w-sm bg-white px-6 pt-6 pb-2 rounded-xl shadow-lg transform hover:scale-105 transition duration-500">
             <h3 className="mb-3 text-xl font-bold text-[#15d5cc]">Awesome Yoga</h3>
@@ -33,7 +34,9 @@ const Card = ({ yoga }) => {
                     <p>${price}</p>
                 </div>
 
-                <button className="mt-4 text-xl w-full text-white bg-[#15d5cc] py-2 rounded-none hover:bg-[#2C75BA] shadow-lg">Book Now</button>
+                <Link to={`/classes/${_id}`}>
+                    <button className="mt-4 text-xl w-full text-white bg-[#15d5cc] py-2 rounded-none hover:bg-[#2C75BA] shadow-lg">Book Now</button>
+                </Link>
             </div>
         </div>
     );
