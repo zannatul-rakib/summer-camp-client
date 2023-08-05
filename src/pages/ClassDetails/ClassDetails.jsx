@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import { MyContext } from "../../provider/AuthProvider";
 import Hero from "../../components/Hero";
 import { BiTimeFive } from "react-icons/bi";
@@ -100,7 +100,9 @@ const ClassDetails = () => {
                     </div>
                     <div className="mt-6">
 
-                        <button onClick={() => handleAddToCart(_id)} className="btn w-full py-4 uppercase bg-[#15d5cc] text-white rounded-md hover:bg-indigo-600">Enroll Now</button>
+                        <Link to="/payment">
+                            <button onClick={() => handleAddToCart(_id)} className="btn w-full py-4 uppercase bg-[#15d5cc] text-white rounded-md hover:bg-indigo-600">Enroll Now</button>
+                        </Link>
                     </div>
                     <div>
                         <div className="relative">

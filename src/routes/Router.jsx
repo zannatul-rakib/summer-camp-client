@@ -11,6 +11,7 @@ import PrivateRouter from "./PrivateRouter";
 import UserDashboard from "../pages/UserDasboard/UserDashboard";
 import Cart from "../pages/UserDasboard/Cart";
 import DashBoard from "../layouts/DasBoard";
+import Payment from "../pages/Payment/Payment";
 
 
 export const router = createBrowserRouter([
@@ -42,6 +43,10 @@ export const router = createBrowserRouter([
                 loader: ({ params }) => fetch(`http://localhost:5000/classes/${params.id}`)
             },
             {
+                path: "/payment",
+                element: <PrivateRouter><Payment /></PrivateRouter>
+            },
+            {
                 path: "signin",
                 element: <SignIn />
             },
@@ -63,7 +68,20 @@ export const router = createBrowserRouter([
             {
                 path: "cart",
                 element: <Cart />
-            }
+            },
+            // {
+            //     path: 'admin-home',
+            //     element: <AdminDashboard />
+            // },
+            // {
+            //     path: 'manage-user',
+            //     element: <ManageUser />
+            // },
+            // {
+            //     path: 'add-class',
+            //     element: <AddClass />
+            // },
+
         ]
     }
 
