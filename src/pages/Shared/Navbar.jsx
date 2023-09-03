@@ -13,7 +13,7 @@ const navigation = [
     { name: 'Instructors', href: '/instructors', id: 2 },
     { name: 'Classes', href: '/classes', id: 3 },
     { name: 'Contact', href: '/contact', id: 4 },
-    { name: 'Blog', href: '/blog', id: 5 },
+    { name: 'Blog', href: '/blogs', id: 5 },
 ];
 
 function classNames(active, inactive) {

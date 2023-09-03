@@ -16,6 +16,8 @@ import AdminDashboard from "../pages/AdminDashBoard/AdminDashboard";
 import ManageUser from "../pages/ManageUser/ManageUser";
 import AddClass from "../pages/AddClass/AddClass";
 import ManageClasses from "../pages/ManageClasses/ManageClasses";
+import Contact from "../pages/Contact/Contact";
+import Blogs from "../pages/Blogs/Blogs";
 
 
 export const router = createBrowserRouter([
@@ -45,6 +47,14 @@ export const router = createBrowserRouter([
                 path: "/classes/:id",
                 element: <PrivateRouter><ClassDetails /></PrivateRouter>,
                 loader: ({ params }) => fetch(`https://summercamp-yoga-server.vercel.app/classes/${params.id}`)
+            },
+            {
+                path: "/contact",
+                element: <Contact />
+            },
+            {
+                path: "/blogs",
+                element: <Blogs />
             },
             {
                 path: "/payment",
